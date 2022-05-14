@@ -1,6 +1,5 @@
 // messagesRouter.js
-const connection = require("../db/db.js");
-const mysql = require("mysql");
+
 const express = require("express");
 const router = express.Router();
 const { detectLanguage, translateText } = require("../utils/translateFunctions");

@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/messages', messagesRouter);
+//app.use('/messages', messagesRouter);
 app.use('/utils', utilsRouter);
 const port = process.env.port || 8080;
 
