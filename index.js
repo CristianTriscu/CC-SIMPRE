@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require("body-parser");
-const messagesRouter = require("./routers/messagesRouter");
+// const messagesRouter = require("./routers/messagesRouter");
 const utilsRouter = require("./routers/utilsRouter");
 const app = express();
 
