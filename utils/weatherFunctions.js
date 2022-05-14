@@ -1,8 +1,8 @@
 const axios = require("axios");
-// const dotenv = require("dotenv");
-// dotenv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 const weatherApiKey = process.env.WEATHER_API_KEY;
-const getWeatherDetailsByCity = (city) => {
+const getWeatherDetailsByCity = async (city) => {
     const options = {
         method: 'GET',
         url: 'https://community-open-weather-map.p.rapidapi.com/weather',
@@ -20,13 +20,21 @@ const getWeatherDetailsByCity = (city) => {
             'X-RapidAPI-Key': weatherApiKey
         }
     };
+    let responnse = "empty response"
+    try {
+        const value = await axios.request(options);
+        if (value.status === 200) {
+            let dataToReturn = value.data.replace("test(", "");
+            dataToReturn = JSON.parse(dataToReturn.replace(")", ""));
 
-    axios.request(options).then(function (response) {
-        return response.data;
-    }).catch(function (error) {
+            return dataToReturn;
+        }
+    } catch (error) {
         console.error(error);
         return error;
-    });
+    }
+    return responnse;
+
 }
 
 module.exports = {

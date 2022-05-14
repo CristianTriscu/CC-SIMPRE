@@ -18,12 +18,22 @@ router.get("/detect", async (req, res) => {
     })
 })
 
-router.post("/send", (req, res) => {
-    const { senderName, senderMail, receiverMail, messageContent } = req.body;
+router.post("/send", async (req, res) => {
+    const { senderName, receiverMail, messageContent, language } = req.body;
 
-    const sendMailResponse = sendMail(receiverMail, senderMail, messageContent, `${senderName} has send you a message`);
+    if (!senderName, !receiverMail || !messageContent || !language) {
+        return res.status(400).json({ status: false, message: "Missing params" });
+    }
 
-    return res.send(200);
+    if (!LANGUAGE_ISO_CODE[language]) {
+        return res.status(400).send("invalid langauage");
+    }
+    const translatedText = await translateText(messageContent, LANGUAGE_ISO_CODE[language]);
+
+    sendMail(receiverMail, "triscucristian18@stud.ase.ro", translatedText[0], `${senderName} has send you a message`);
+
+    res.status(200).json({ translatedText: translatedText[0] });
+
 })
 router.get("/translate", async (req, res) => {
     const { text, language } = req.body;
@@ -40,21 +50,10 @@ router.get("/translate", async (req, res) => {
     })
 })
 
-router.post("/sendWeatherInfo", async (req, res) => {
-
-    const weatherInfo = getWeatherDetailsByCity()
-
-    const { city, senderName, senderMail, receiverMail, messageContent } = req.body;
-
-    const sendMailResponse = sendMail(receiverMail, senderMail, messageContent, `${senderName} has send you a message`);
-
-    return res.send(200);
-})
 
 router.get("/weatherInfo/:city", async (req, res) => {
-
     const { city } = req.params
-    const weatherInfo = getWeatherDetailsByCity(city);
+    const weatherInfo = await getWeatherDetailsByCity(city);
     return res.status(200).json(weatherInfo);
 })
 
