@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //app.use('/messages', messagesRouter);
 app.use('/utils', utilsRouter);
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     res.send("Hello Word!")
