@@ -46,7 +46,7 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
     const { id } = req.params;
     if (!id) {
-        // send bad request error
+        // send bad request error/
         return res.status(400).send("Bad request. Missing parametres.");
     }
     const queryString = `DELETE FROM messages WHERE entryID = ${mysql.escape(id)}`;
