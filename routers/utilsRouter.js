@@ -6,6 +6,7 @@ const router = express.Router();
 const { detectLanguage, translateText } = require("../utils/translateFunctions");
 const { LANGUAGE_ISO_CODE } = require("../utils/dictionaries");
 const sendMail = require("../utils/mailFunctions.js");
+const { getWeatherDetailsByCity } = require("../utils/weatherFunctions.js");
 router.get("/detect", async (req, res) => {
     const { text } = req.body;
     if (!text) {
@@ -37,6 +38,24 @@ router.get("/translate", async (req, res) => {
     return res.status(200).json({
         translateText: translatedText[0]
     })
+})
+
+router.post("/sendWeatherInfo", async (req, res) => {
+
+    const weatherInfo = getWeatherDetailsByCity()
+
+    const { city, senderName, senderMail, receiverMail, messageContent } = req.body;
+
+    const sendMailResponse = sendMail(receiverMail, senderMail, messageContent, `${senderName} has send you a message`);
+
+    return res.send(200);
+})
+
+router.get("/weatherInfo/:city", async (req, res) => {
+
+    const { city } = req.params
+    const weatherInfo = getWeatherDetailsByCity(city);
+    return res.status(200).json(weatherInfo);
 })
 
 module.exports = router;

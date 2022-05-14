@@ -42,11 +42,6 @@ router.post("/", (req, res) => {
 });
 
 
-
-
-router.get("/:salut", (req, res) => {
-    return res.status(202).json({ status: true, message: "hai salut alexandre!" })
-})
 // Add delete by id route
 router.delete("/:id", (req, res) => {
     const { id } = req.params;
