@@ -12,3 +12,5 @@ link catre aplicatia deployed:
 
 https://salty-meadow-04148.herokuapp.com/
 
+Youtube Demo:
+https://www.youtube.com/watch?v=t8WihJeP_ss
