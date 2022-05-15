@@ -6,8 +6,10 @@ Youtube Demo:
 https://www.youtube.com/watch?v=t8WihJeP_ss
 
 Link catre aplicatia deployed: 
+back-end
 https://salty-meadow-04148.herokuapp.com/
-
+front-end:
+https://secret-ridge-39131.herokuapp.com/
 
 1&2 Introducere + Descriere problema:
     Proiectul consta intr-o aplicatie web construita cu ajutorul bibliotecii react si stilizta cu MaterialUI.
