@@ -25,3 +25,4 @@ in functie de orasul selectat pentru ca mai apoi user-ul sa poata trimite un ema
 
 ![alt text](https://imgur.com/Y0gOiBr)
 
+![Y0gOiBr - Imgur](https://user-images.githubusercontent.com/62332461/168468640-248e8729-8f1c-4a9e-b17c-563001068dcb.png)
