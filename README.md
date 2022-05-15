@@ -24,7 +24,8 @@ in functie de orasul selectat pentru ca mai apoi user-ul sa poata trimite un ema
     - trimiterea de email-uri (pentru textele traduse anterior) folosind  API-ul oferit de ✅Sendgrid.
     - Aplicatia a fost mutata in cloud prin intermediul paltformei ✅Heroku pentru a putea fi folosita de oricine.
 
-
+4. Flux de date:
+5. 
 metode HTTP folosite:
  - GET - fetch date despre vreme,
  - POST - trimite email-uri si translate text
@@ -32,9 +33,10 @@ metode HTTP folosite:
 ![Y0gOiBr - Imgur](https://user-images.githubusercontent.com/62332461/168468640-248e8729-8f1c-4a9e-b17c-563001068dcb.png)
 <img width="1389" alt="Screenshot 2022-05-15 at 13 39 53" src="https://user-images.githubusercontent.com/62332461/168468674-f410c27b-0c90-45f4-9c60-e7d693330625.png">
 
-Exemplificare in aplicatie:
+5. Exemplificare in aplicatie (capturi de ecran):
 
 <img width="1791" alt="Screenshot 2022-05-15 at 13 41 18" src="https://user-images.githubusercontent.com/62332461/168468750-75b2c333-583b-46f9-8c1f-d8cd5021a572.png">
+<img width="1654" alt="Screenshot 2022-05-15 at 13 56 41" src="https://user-images.githubusercontent.com/62332461/168469315-cb10b580-f353-412f-bf68-8cc4b9f97d69.png">
 
 
 Referinte:
