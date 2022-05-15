@@ -50,3 +50,6 @@ https://rapidapi.com/blog/lp/openweathermap/?utm_source=google&utm_medium=cpc&ut
 
 Google:
 https://console.cloud.google.com/
+
+SendGrid:
+https://sendgrid.com/
